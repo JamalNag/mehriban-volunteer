@@ -234,6 +234,14 @@ figcaption { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 /* ---------- Ornament band ---------- */
 .band { line-height: 0; }
 .band svg { display: block; width: 100%; height: 74px; }
+/* The S-motif border drifts one way and the rope guards twist the other; the footer band runs in
+   reverse, so the pattern appears to travel around the page. Each loop moves exactly one pattern
+   tile, so it repeats seamlessly. */
+.band .drift { animation: drift 18s linear infinite; }
+.band .rope { animation: rope 1.8s linear infinite; }
+.band.rev .drift, .band.rev .rope { animation-direction: reverse; }
+@keyframes drift { to { transform: translateX(160px); } }
+@keyframes rope { to { transform: translateX(-8px); } }
 
 /* ---------- Sections ---------- */
 .section { padding-block: clamp(64px, 9vw, 120px); }
@@ -482,6 +490,7 @@ figcaption { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-text > *, .fact, .hero-photo { animation-name: fade; }
+  .band .drift, .band .rope { animation: none; }
   .js-ready .thumb { transition-property: opacity; }
   .mark::after { transition: opacity 150ms ease; transform: rotate(45deg) scale(1); }
   .lang, .toggle, .menu-btn, .copy-btn { transition: none; }
