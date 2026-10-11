@@ -232,16 +232,29 @@ h3 {
 figcaption { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 
 /* ---------- Ornament band ---------- */
+/* Navy edge, rope guard, S-motif border, rope guard, lattice field, navy edge. Each moving stripe is
+   an HTML layer one tile wider than the screen, slid by exactly one tile with transform, so the loop
+   is seamless and runs on the compositor instead of repainting. The footer band runs in reverse, so
+   the pattern appears to travel around the page. */
 .band { line-height: 0; }
-.band svg { display: block; width: 100%; height: 74px; }
-/* The S-motif border drifts one way and the rope guards twist the other; the footer band runs in
-   reverse, so the pattern appears to travel around the page. Each loop moves exactly one pattern
-   tile, so it repeats seamlessly. */
-.band .drift { animation: drift 18s linear infinite; }
-.band .rope { animation: rope 1.8s linear infinite; }
-.band.rev .drift, .band.rev .rope { animation-direction: reverse; }
-@keyframes drift { to { transform: translateX(160px); } }
-@keyframes rope { to { transform: translateX(-8px); } }
+.band > div { position: relative; overflow: hidden; }
+.b-edge { height: 1.5px; background: var(--rug-navy); }
+.b-edge-2 { height: 2px; }
+.b-line { height: 1px; background: var(--rug-navy); }
+.b-rope { height: 6px; }
+.b-border { height: 18px; }
+.b-field { height: 14px; background: url(ornament/field.svg) 0 0 / 28px 14px repeat-x; }
+.band i {
+  position: absolute; top: 0; bottom: 0; left: var(--tile-neg); width: calc(100% + var(--tile));
+  background-repeat: repeat-x; background-position: 0 0;
+  will-change: transform;
+}
+.b-rope i { --tile: 6px; --tile-neg: -6px; background-image: url(ornament/rope.svg); background-size: 6px 6px; animation: slide 1.6s linear infinite reverse; }
+.b-border i { --tile: 108px; --tile-neg: -108px; background-image: url(ornament/border.svg); background-size: 108px 18px; animation: slide 14s linear infinite; }
+.band.rev .b-border i { animation-direction: reverse; }
+.band.rev .b-rope i { animation-direction: normal; }
+.band.is-off i { animation-play-state: paused; }
+@keyframes slide { to { transform: translateX(var(--tile)); } }
 
 /* ---------- Sections ---------- */
 .section { padding-block: clamp(64px, 9vw, 120px); }
@@ -490,7 +503,7 @@ figcaption { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-text > *, .fact, .hero-photo { animation-name: fade; }
-  .band .drift, .band .rope { animation: none; }
+  .band i { animation: none !important; }
   .js-ready .thumb { transition-property: opacity; }
   .mark::after { transition: opacity 150ms ease; transform: rotate(45deg) scale(1); }
   .lang, .toggle, .menu-btn, .copy-btn { transition: none; }

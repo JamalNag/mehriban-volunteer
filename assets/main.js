@@ -146,6 +146,14 @@
     }
   });
 
+  /* ---------- Carpet bands: only animate while on screen ---------- */
+  if ('IntersectionObserver' in window) {
+    var bandObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('is-off', !e.isIntersecting); });
+    });
+    document.querySelectorAll('.band').forEach(function (b) { bandObserver.observe(b); });
+  }
+
   /* ---------- Start ---------- */
   var saved = null;
   try { saved = localStorage.getItem('meh-lang'); } catch (e) { /* storage unavailable */ }

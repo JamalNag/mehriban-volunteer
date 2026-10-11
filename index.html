@@ -13,17 +13,11 @@
 </head>
 <body>
 
-<!-- ORNAMENT: drawn from a Karabakh dragon carpet (Əjdahalı): the ivory border of tilted S-motifs,
-     the twisted-rope guard stripes, the red field crossed by an ivory lattice, and its diamond medallions. -->
+<!-- ORNAMENT: drawn from a Karabakh dragon carpet (Əjdahalı). The border bands use tile images in
+     assets/ornament/ (S-motif border, rope guard stripe, red field with ivory lattice); this sprite
+     holds only the diamond medallion used as the logo. -->
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
   <defs>
-    <!-- Border S-motif with curled ends; colour comes from the <use> element's `color` -->
-    <symbol id="s-motif" viewBox="0 0 40 28">
-      <g transform="rotate(-18 20 14)" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="square" stroke-linejoin="round">
-        <path d="M28 7 H15 Q11 7 11 11 Q11 14 15 14 H25 Q29 14 29 17.5 Q29 21 25 21 H12"/>
-        <path d="M28 7 V10.5 M12 21 V17.5"/>
-      </g>
-    </symbol>
     <!-- Diamond medallion from the field -->
     <symbol id="med" viewBox="0 0 32 32">
       <polygon class="r-ivory" points="16,1 31,16 16,31 1,16"/>
@@ -32,28 +26,6 @@
       <polygon class="r-gold" points="16,12.5 19.5,16 16,19.5 12.5,16"/>
       <rect class="r-ivory" x="15" y="2.5" width="2" height="3"/><rect class="r-ivory" x="15" y="26.5" width="2" height="3"/>
     </symbol>
-    <!-- Main border: S-motifs on ivory in navy, red, blue and orange -->
-    <pattern id="rug-border" width="160" height="28" patternUnits="userSpaceOnUse">
-      <rect class="r-ivory" width="160" height="28"/>
-      <use href="#s-motif" class="c-navy" x="0" width="40" height="28"/>
-      <use href="#s-motif" class="c-red" x="40" width="40" height="28"/>
-      <use href="#s-motif" class="c-sky" x="80" width="40" height="28"/>
-      <use href="#s-motif" class="c-orange" x="120" width="40" height="28"/>
-    </pattern>
-    <!-- Guard stripe: twisted rope in red and ivory on navy -->
-    <pattern id="rug-guard" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect class="r-navy" width="8" height="8"/>
-      <polygon class="r-red" points="0,8 3,0 5,0 2,8"/>
-      <polygon class="r-ivory" points="4,8 7,0 9,0 6,8"/>
-    </pattern>
-    <!-- Field: red ground crossed by an ivory lattice with green edges, medallions in the compartments -->
-    <pattern id="rug-field" width="48" height="24" patternUnits="userSpaceOnUse">
-      <rect class="r-red" width="48" height="24"/>
-      <path class="s-green" d="M0 2 L44 24 M4 0 L48 22 M0 22 L44 0 M4 24 L48 2" stroke-width="1.4" fill="none"/>
-      <path class="s-ivory" d="M0 0 L48 24 M0 24 L48 0" stroke-width="3.2" fill="none"/>
-      <polygon class="r-gold" points="0,8 4,12 0,16 -4,12"/><polygon class="r-gold" points="48,8 52,12 48,16 44,12"/>
-      <polygon class="r-navy" points="24,18 27,21 24,24 21,21"/><polygon class="r-navy" points="24,0 27,3 24,6 21,3"/>
-    </pattern>
   </defs>
 </svg>
 
@@ -108,7 +80,7 @@
   </figure>
 </section>
 
-<div class="band" aria-hidden="true"><svg><rect class="r-navy" width="100%" height="2"/><g transform="translate(0,2)"><g class="rope"><rect x="-8" width="200%" height="8" fill="url(#rug-guard)"/></g></g><g transform="translate(0,10)"><g class="drift"><rect x="-160" width="200%" height="28" fill="url(#rug-border)"/></g></g><g transform="translate(0,38)"><g class="rope"><rect x="-8" width="200%" height="8" fill="url(#rug-guard)"/></g></g><rect class="r-navy" y="46" width="100%" height="1.5"/><g transform="translate(0,47.5)"><rect width="100%" height="24" fill="url(#rug-field)"/></g><rect class="r-navy" y="71.5" width="100%" height="2.5"/></svg></div>
+<div class="band" aria-hidden="true"><div class="b-edge"></div><div class="b-rope"><i></i></div><div class="b-border"><i></i></div><div class="b-rope"><i></i></div><div class="b-line"></div><div class="b-field"></div><div class="b-edge b-edge-2"></div></div>
 
 <!-- SETTING -->
 <section class="section" id="setting">
@@ -359,7 +331,7 @@
 
 </main>
 
-<div class="band rev" aria-hidden="true"><svg><rect class="r-navy" width="100%" height="2"/><g transform="translate(0,2)"><g class="rope"><rect x="-8" width="200%" height="8" fill="url(#rug-guard)"/></g></g><g transform="translate(0,10)"><g class="drift"><rect x="-160" width="200%" height="28" fill="url(#rug-border)"/></g></g><g transform="translate(0,38)"><g class="rope"><rect x="-8" width="200%" height="8" fill="url(#rug-guard)"/></g></g><rect class="r-navy" y="46" width="100%" height="1.5"/><g transform="translate(0,47.5)"><rect width="100%" height="24" fill="url(#rug-field)"/></g><rect class="r-navy" y="71.5" width="100%" height="2.5"/></svg></div>
+<div class="band rev" aria-hidden="true"><div class="b-edge"></div><div class="b-rope"><i></i></div><div class="b-border"><i></i></div><div class="b-rope"><i></i></div><div class="b-line"></div><div class="b-field"></div><div class="b-edge b-edge-2"></div></div>
 <footer class="site-footer">
   <div class="wrap footer-row">
     <p>© 2026 Jamal Naghizade</p>
