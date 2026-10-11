@@ -15,7 +15,7 @@ A one-page site about Jamal Naghizade's volunteer work at the Mehriban Women and
 This site is about a domestic-violence shelter. Any photo added here must follow these rules:
 
 - Blur every child's face.
-- Leave out women staying at the shelter entirely. Crop them out, even if they are seen from behind.
+- Show women staying at the shelter only from behind, never their faces, and only with their agreement.
 - Don't show the building, gate, street sign, house number or address.
 - Strip metadata. The current images have no EXIF or GPS data.
 

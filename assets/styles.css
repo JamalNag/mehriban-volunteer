@@ -380,13 +380,14 @@ figcaption { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 .gallery .g-wide { grid-column: span 4; }
 .gallery .g-tall { grid-column: span 2; }
 .g-wide img { aspect-ratio: auto; height: 100%; max-height: 520px; }
-.g-tall img { aspect-ratio: auto; height: 100%; max-height: 520px; object-position: 50% 30%; }
+.g-tall img { aspect-ratio: auto; height: 100%; max-height: 520px; object-position: 45% 50%; }
 .gallery .g-wide, .gallery .g-tall { grid-template-rows: minmax(0, 1fr) auto; }
 @media (max-width: 760px) {
   .gallery { grid-template-columns: 1fr 1fr; }
   .gallery figure, .gallery .g-tall { grid-column: span 1; }
   .gallery .g-wide { grid-column: 1 / -1; }
-  .g-wide img, .g-tall img { aspect-ratio: 4 / 3; height: auto; }
+  .g-wide img { aspect-ratio: 4 / 3; height: auto; }
+  .g-tall img { aspect-ratio: 3 / 4; height: auto; max-height: none; }
 }
 @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } .gallery figure, .gallery .g-tall { grid-column: 1 / -1; } }
 
