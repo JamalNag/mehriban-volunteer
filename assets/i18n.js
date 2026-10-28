@@ -145,7 +145,10 @@ window.MEH_I18N = {
     'org.local': '“Clean World” Aid to Women Social Union',
     'org.p': 'Mehriban Qadın və Uşaq Sığınacağını idarə edir. Sakinləri qorumaq üçün sığınacağın ünvanı burada dərc olunmur.',
     'ft.orn': 'Ornament Qarabağ «Əjdahalı» xalçasından götürülüb: S-motivli haşiyəsi, kəndirvari zolaqları və fil dişi rəngli tor ilə kəsişən qırmızı yerliyi. Azərbaycan xalçaçılıq sənəti 2010-cu ildə UNESCO-nun Qeyri-maddi Mədəni İrs siyahısına daxil edilib.',
-    'ft.wfa': 'Həmçinin: Women Forward Azerbaijan →'
+    'ft.also': 'Həmçinin:',
+    'ft.wfa': 'Women Forward Azerbaijan →',
+    'ft.amo': 'Gənc oğlanın geyindiyi feminist şüarlar →',
+    'ft.ft5': 'Müdriklik haqqında beş nağıl →'
   },
 
   ru: {
@@ -285,6 +288,9 @@ window.MEH_I18N = {
     'org.name': 'Общественное объединение помощи женщинам «Чистый мир»',
     'org.p': 'Руководит приютом для женщин и детей «Мехрибан». Чтобы защитить жительниц, адрес приюта здесь не публикуется.',
     'ft.orn': 'Орнамент взят из карабахского ковра «Аждахалы» (ковёр с драконами): кайма с S-образными мотивами, полосы-«жгуты» и красное поле, пересечённое решёткой цвета слоновой кости. Азербайджанское ковроткачество внесено в список нематериального культурного наследия ЮНЕСКО в 2010 году.',
-    'ft.wfa': 'Также: Women Forward Azerbaijan →'
+    'ft.also': 'Также:',
+    'ft.wfa': 'Women Forward Azerbaijan →',
+    'ft.amo': 'Феминистские лозунги на молодом мужчине →',
+    'ft.ft5': 'Пять сказок о мудрости →'
   }
 };
